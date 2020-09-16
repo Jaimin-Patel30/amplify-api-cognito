@@ -1,0 +1,13 @@
+{
+  "name": "test-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "deploy": "sam build --region us-east-1 && sam package --template-file template.yml --s3-bucket sam-artefact-bucket-asn23lk12 --output-template-file packaged.yaml && sam deploy --region us-east-1 --template-file packaged.yaml --stack-name test-project --capabilities CAPABILITY_IAM CAPABILITY_NAMED_IAM",
+    "getStack": "aws cloudformation describe-stacks --region us-east-1 --stack-name test-project"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
